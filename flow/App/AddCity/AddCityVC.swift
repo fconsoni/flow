@@ -48,6 +48,7 @@ class AddCityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     self.selectedCountry = self.countries[indexPath.row]
+    self.gotToStart()
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +75,13 @@ class AddCityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let dest = segue.destination as! StartVC
     
     dest.recieveNewCountry(self.selectedCountry)
+  }
+  
+  //Una manera manual de manejar el set as root (muy fea, pero valida)
+  private func gotToStart() {
+    let vcs = self.navigationController.fold([], { $0.viewControllers })
+    (vcs.first! as! StartVC).recieveNewCountry(self.selectedCountry)
+    self.navigationController?.setViewControllers(vcs.take(1), animated: true)
   }
 }
 

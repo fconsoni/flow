@@ -38,6 +38,7 @@ class WeatherService {
     }
 
     if response.statusCode != 200 {
+      self.event(.failure(NamedError.say("Weather not found")))
       return
     }
 

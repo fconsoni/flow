@@ -32,6 +32,7 @@ class CountryService {
     }
     
     if response.statusCode != 200 {
+      self.event(.failure(NamedError.say("Country not found")))
       return
     }
     
