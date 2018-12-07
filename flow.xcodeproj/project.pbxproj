@@ -32,6 +32,8 @@
 		8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */; };
 		8450AA8021BA9B2D00B44E39 /* CityCellUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */; };
 		8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8221BAA55200B44E39 /* DetailsVC.swift */; };
+		8450AA8521BAA68F00B44E39 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8421BAA68F00B44E39 /* CountryService.swift */; };
+		8450AA8721BAACAD00B44E39 /* CountryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8621BAACAD00B44E39 /* CountryParser.swift */; };
 		AC80672EE2C829715EE7D50B /* Pods_flowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76319CA47DB8212748EC770C /* Pods_flowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellUiView.swift; sourceTree = "<group>"; };
 		8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCellUiView.xib; sourceTree = "<group>"; };
 		8450AA8221BAA55200B44E39 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		8450AA8421BAA68F00B44E39 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		8450AA8621BAACAD00B44E39 /* CountryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryParser.swift; sourceTree = "<group>"; };
 		B3B86B564B4757C1DFCB54E8 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +182,7 @@
 				8450AA6C21B8C84700B44E39 /* Parser */,
 				8450AA4D21B8A6C500B44E39 /* Service.swift */,
 				8450AA5021B8A95800B44E39 /* WeatherService.swift */,
+				8450AA8421BAA68F00B44E39 /* CountryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8450AA6D21B8C86100B44E39 /* WeatherParser.swift */,
+				8450AA8621BAACAD00B44E39 /* CountryParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 				8450AA7221B8D11400B44E39 /* Collection.swift in Sources */,
 				8450AA6921B8BC8F00B44E39 /* Result.swift in Sources */,
 				8450AA4E21B8A6C500B44E39 /* Service.swift in Sources */,
+				8450AA8521BAA68F00B44E39 /* CountryService.swift in Sources */,
 				8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */,
 				8450AA6B21B8C46800B44E39 /* Weather.swift in Sources */,
 				8450AA7421B8DC6500B44E39 /* AlertPresenter.swift in Sources */,
@@ -455,6 +462,7 @@
 				8450AA7A21BA9A9B00B44E39 /* CityCell.swift in Sources */,
 				8450AA6E21B8C86100B44E39 /* WeatherParser.swift in Sources */,
 				8450AA5A21B8AD9300B44E39 /* Tap.swift in Sources */,
+				8450AA8721BAACAD00B44E39 /* CountryParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

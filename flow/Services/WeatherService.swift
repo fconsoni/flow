@@ -13,7 +13,6 @@ import SwiftyJSON
 class WeatherService {
   private let apiKey = "de73edde69e975f23146f18d77bb1710"
   private let url = "http://api.openweathermap.org/data/2.5/forecast?"
-  private var callingResult: Result<Weather> = .failure(NamedError.say("Wrong"))
   private let event: (Result<Weather>) -> Void 
   
   init(onDataRecieved event: @escaping (Result<Weather>) -> Void) {
@@ -34,7 +33,7 @@ class WeatherService {
   
   private func handler(_ data: DataResponse<Any>) {
     guard let response = data.response else {
-      self.callingResult = .failure(data.result.error!)
+      self.event(.failure(data.result.error!))
       return
     }
 
