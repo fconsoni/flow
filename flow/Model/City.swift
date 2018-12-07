@@ -10,10 +10,10 @@ import Foundation
 
 struct City {
   let name: String
-  let countryCode: String
 }
 
 struct Country {
   let name: String
+  let code: String
   let capitalCity: City
 }

@@ -35,6 +35,6 @@ class CountryService {
       return
     }
     
-    self.event(WeatherParser.parse(JSON(data.result.value.getOrElse(""))))
+    self.event(CountryParser.parse(JSON(data.result.value.getOrElse(""))))
   }
 }

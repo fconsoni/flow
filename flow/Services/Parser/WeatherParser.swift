@@ -9,7 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-//Una aplicacion del paradigma funcional es muy util en parser
+//La aplicacion del paradigma funcional es muy util en un parser
+//Funciones currificadas, aplicacion parcial, y composicion de funciones
 class WeatherParser {
   static func parse(_ json: JSON?) -> Result<Weather> {
     guard let json = json else {
@@ -31,8 +32,7 @@ class WeatherParser {
   
   private static func getCityFrom(_ json: JSON) -> City {
     //Un ejemplo de programacion funcional: es una composicion de funciones, de misma lectura que Haskell
-    return City(name: (toString << (getKeyFromJson("name") << getKeyFromJson("city")))(json),
-                countryCode: (toString << (getKeyFromJson("country") << getKeyFromJson("city")))(json))
+    return City(name: (toString << (getKeyFromJson("name") << getKeyFromJson("city")))(json))
   }
   
   private static func getForecastFrom(_ json: JSON) -> Weather.Forecast {
@@ -50,28 +50,3 @@ class WeatherParser {
     return hour == 6
   }
 }
-
-private func getFrom(_ json: JSON?, key: String) -> JSON? {
-  return (json.flatMap{ $0.dictionary }.getOrElse([:]))[key]
-}
-
-private func toString(_ json: JSON?) -> String {
-  return json.flatMap{ $0.string }.getOrElse("EMPTY")
-}
-
-private func toInt(_ json: JSON?) -> Int {
-  return json.flatMap{ $0.int }.getOrElse(0)
-}
-
-private func toList(_ json: JSON?) -> [JSON] {
-  return json.flatMap{ $0.array }.getOrElse([])
-}
-
-private func toDate(_ json: JSON?) -> Date {
-  let formatter = DateFormatter()
-  formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-  
-  return ((formatter.date(from:) << toString)(json)).getOrElse(Date())
-}
-
-private let getKeyFromJson = curry(flip(getFrom))

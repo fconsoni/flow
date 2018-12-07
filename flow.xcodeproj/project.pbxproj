@@ -34,6 +34,7 @@
 		8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8221BAA55200B44E39 /* DetailsVC.swift */; };
 		8450AA8521BAA68F00B44E39 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8421BAA68F00B44E39 /* CountryService.swift */; };
 		8450AA8721BAACAD00B44E39 /* CountryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8621BAACAD00B44E39 /* CountryParser.swift */; };
+		8450AA8921BAB0DC00B44E39 /* ParserFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8821BAB0DC00B44E39 /* ParserFunctions.swift */; };
 		AC80672EE2C829715EE7D50B /* Pods_flowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76319CA47DB8212748EC770C /* Pods_flowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		8450AA8221BAA55200B44E39 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		8450AA8421BAA68F00B44E39 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		8450AA8621BAACAD00B44E39 /* CountryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryParser.swift; sourceTree = "<group>"; };
+		8450AA8821BAB0DC00B44E39 /* ParserFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserFunctions.swift; sourceTree = "<group>"; };
 		B3B86B564B4757C1DFCB54E8 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,6 +212,7 @@
 			children = (
 				8450AA6D21B8C86100B44E39 /* WeatherParser.swift */,
 				8450AA8621BAACAD00B44E39 /* CountryParser.swift */,
+				8450AA8821BAB0DC00B44E39 /* ParserFunctions.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			files = (
 				8450AA7021B8CC8900B44E39 /* FPUtils.swift in Sources */,
 				8450AA5121B8A95800B44E39 /* WeatherService.swift in Sources */,
+				8450AA8921BAB0DC00B44E39 /* ParserFunctions.swift in Sources */,
 				8450AA6721B8B99D00B44E39 /* Optional.swift in Sources */,
 				8450AA4A21B8A49800B44E39 /* StartVC.swift in Sources */,
 				8450AA2C21B89F7F00B44E39 /* AddCityVC.swift in Sources */,
