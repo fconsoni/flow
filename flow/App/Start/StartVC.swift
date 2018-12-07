@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet private weak var addButton: UIButton!
+  
   private var result: Result<Weather>!
   private var cities: [City] = []
 
@@ -32,6 +34,11 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     })
   }
   
+  private func keepResult(_ result: Result<Weather>) {
+    self.result = result
+    self.setDataInView()
+  }
+  
   private func setDataInView() {
     if !self.result.isSuccess() {
       AlertPresenter.presentError(on: self, message: "Something went wrong when retriving weather")
@@ -41,11 +48,6 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       
       self.tableView.reloadData()
     }
-  }
-  
-  private func keepResult(_ result: Result<Weather>) {
-    self.result = result
-    self.setDataInView()
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +63,9 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     return cell
   }
 
+  @IBAction func about(sender: AnyObject) {
+    performSegue(withIdentifier: "AddCity", sender: sender)
+  }
   
     /*
     // MARK: - Navigation

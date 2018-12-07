@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		51DE31B4EA2193D1B69DC36E /* Pods_flow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A2465C932888A1168152B9 /* Pods_flow.framework */; };
 		8450AA2A21B89F7F00B44E39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA2921B89F7F00B44E39 /* AppDelegate.swift */; };
-		8450AA2C21B89F7F00B44E39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA2B21B89F7F00B44E39 /* ViewController.swift */; };
+		8450AA2C21B89F7F00B44E39 /* AddCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA2B21B89F7F00B44E39 /* AddCityVC.swift */; };
 		8450AA2F21B89F7F00B44E39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA2D21B89F7F00B44E39 /* Main.storyboard */; };
 		8450AA3421B89F8300B44E39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA3221B89F8300B44E39 /* LaunchScreen.storyboard */; };
 		8450AA3F21B89F8300B44E39 /* flowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA3E21B89F8300B44E39 /* flowTests.swift */; };
@@ -31,6 +31,7 @@
 		8450AA7A21BA9A9B00B44E39 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7921BA9A9B00B44E39 /* CityCell.swift */; };
 		8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */; };
 		8450AA8021BA9B2D00B44E39 /* CityCellUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */; };
+		8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8221BAA55200B44E39 /* DetailsVC.swift */; };
 		AC80672EE2C829715EE7D50B /* Pods_flowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76319CA47DB8212748EC770C /* Pods_flowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +53,7 @@
 		82A2465C932888A1168152B9 /* Pods_flow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8450AA2621B89F7F00B44E39 /* flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8450AA2921B89F7F00B44E39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8450AA2B21B89F7F00B44E39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8450AA2B21B89F7F00B44E39 /* AddCityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityVC.swift; sourceTree = "<group>"; };
 		8450AA2E21B89F7F00B44E39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8450AA3321B89F8300B44E39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8450AA3521B89F8300B44E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		8450AA7921BA9A9B00B44E39 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellUiView.swift; sourceTree = "<group>"; };
 		8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCellUiView.xib; sourceTree = "<group>"; };
+		8450AA8221BAA55200B44E39 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		B3B86B564B4757C1DFCB54E8 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,9 +150,9 @@
 		8450AA4B21B8A51700B44E39 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8450AA8121BAA48500B44E39 /* AddCity */,
 				8450AA7721BA909F00B44E39 /* Details */,
 				8450AA5221B8AAE700B44E39 /* Start */,
-				8450AA2B21B89F7F00B44E39 /* ViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -209,6 +211,7 @@
 		8450AA7721BA909F00B44E39 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				8450AA8221BAA55200B44E39 /* DetailsVC.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -221,6 +224,14 @@
 				8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */,
 			);
 			path = CityCell;
+			sourceTree = "<group>";
+		};
+		8450AA8121BAA48500B44E39 /* AddCity */ = {
+			isa = PBXGroup;
+			children = (
+				8450AA2B21B89F7F00B44E39 /* AddCityVC.swift */,
+			);
+			path = AddCity;
 			sourceTree = "<group>";
 		};
 		8F2023FDC1EDA7E9054E057F /* Frameworks */ = {
@@ -429,12 +440,13 @@
 				8450AA5121B8A95800B44E39 /* WeatherService.swift in Sources */,
 				8450AA6721B8B99D00B44E39 /* Optional.swift in Sources */,
 				8450AA4A21B8A49800B44E39 /* StartVC.swift in Sources */,
-				8450AA2C21B89F7F00B44E39 /* ViewController.swift in Sources */,
+				8450AA2C21B89F7F00B44E39 /* AddCityVC.swift in Sources */,
 				8450AA2A21B89F7F00B44E39 /* AppDelegate.swift in Sources */,
 				8450AA6321B8B73000B44E39 /* Async.swift in Sources */,
 				8450AA7221B8D11400B44E39 /* Collection.swift in Sources */,
 				8450AA6921B8BC8F00B44E39 /* Result.swift in Sources */,
 				8450AA4E21B8A6C500B44E39 /* Service.swift in Sources */,
+				8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */,
 				8450AA6B21B8C46800B44E39 /* Weather.swift in Sources */,
 				8450AA7421B8DC6500B44E39 /* AlertPresenter.swift in Sources */,
 				8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */,
