@@ -28,7 +28,7 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     self.addButton.setTitleColor(.gray, for: .disabled)
     
-    self.navigationController?.setViewControllers([self], animated: true)
+    //self.navigationController?.setViewControllers([self], animated: true)
   }
   
   
@@ -64,6 +64,10 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   func recieveNewCountry(_ country: Country) {
     self.countries.append(country)
     self.tableView.reloadData()
+    
+    if self.countries.count > 5 {
+      self.addButton.isEnabled = false
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

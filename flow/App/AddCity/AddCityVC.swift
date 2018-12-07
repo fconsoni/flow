@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class AddCityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AddCityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
   @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var searchTextField: UITextField!
   @IBOutlet private weak var okButton: UIButton!
@@ -23,12 +23,19 @@ class AddCityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     tableView.delegate = self
     tableView.dataSource = self
+    searchTextField.delegate = self
     
-    self.searchTextField.text = "argen"
-    //self.enableButton(false)
+    self.enableButton(false)
+    self.setSearching()
   }
   
+  private func setSearching() {
+    self.searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+  }
   
+  @objc func textFieldDidChange(_ textField: UITextField) {
+    self.enableButton(!(textField.text.getOrElse("") == ""))
+  }
   
   private func getCountries() {
     onMainDo(SVProgressHUD.show, onBackgroundDo: {
