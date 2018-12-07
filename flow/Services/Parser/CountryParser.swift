@@ -25,6 +25,7 @@ class CountryParser {
     
     return Country.init(name: (toString << getKeyFromJson("name")) (json),
                         code: (toString << getKeyFromJson("alpha2Code")) (json),
-                        capitalCity: city)
+                        capitalCity: city,
+                        weather: nil)
   }
 }

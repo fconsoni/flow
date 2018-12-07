@@ -19,13 +19,15 @@ class WeatherService {
     self.event = event
   }
   
-  func getForecastFor(cityName: String, countryCode: String) {
-    let completeUrl = url + "q=\(cityName),\(countryCode)&units=metric" + self.getApiKeyParam()
+  func getForecastFor(_ country: Country) {
+    let completeUrl = url + "q=\(self.getCityParamFrom(country)),\(country.code)&units=metric" + self.getApiKeyParam()
     
     Service(serverURL: completeUrl).hitUrlAndHandleWith(self.handler)
   }
   
-  
+  private func getCityParamFrom(_ country: Country) -> String {
+    return country.capitalCity.name.lowercased().words().joined(separator: "+")
+  }
   
   private func getApiKeyParam() -> String {
     return "&APPID=" + apiKey

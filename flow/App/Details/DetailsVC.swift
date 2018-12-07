@@ -7,55 +7,60 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class DetailsVC: UIViewController {
+class DetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @IBOutlet private weak var cityLabel: UILabel!
   @IBOutlet private weak var countryLabel: UILabel!
-  @IBOutlet private weak var hourLabel: UILabel!
+  @IBOutlet private weak var statusView: StatusUiView!
+  @IBOutlet private weak var tableView: UITableView!
+  
+  private var country: Country!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    if self.view != nil {}
+    
+    self.setTitles()
+    self.getForecast()
+    
+    tableView.delegate = self
+    tableView.dataSource = self
   }
   
+  private func getForecast() {
+    onMainDo(SVProgressHUD.show, onBackgroundDo: { () -> Void in
+      WeatherService(onDataRecieved: self.keepResult).getForecastFor(self.country)
+    }, thenOnMainDo: SVProgressHUD.dismiss)
+  }
   
-  //  private func prepareData() {
-  //    onMainDo(SVProgressHUD.show, onBackgroundDo: { () -> Void in
-  //      WeatherService(onDataRecieved: self.keepResult).getForecastFor(cityName: "buenos+aires", countryCode: "ar")
-  //    }, thenOnMainDo: {
-  //      SVProgressHUD.dismiss()
-  //      self.enableButton(true)
-  //    })
-  //  }
-  //
-  //  private func keepResult(_ result: Result<Weather>) {
-  //    self.result = result
-  //    self.setDataInView()
-  //  }
-  //
-  //  private func setDataInView() {
-  //    if !self.result.isSuccess() {
-  //      AlertPresenter.presentError(on: self, message: "Something went wrong when retriving weather")
-  //    } else {
-  //      let weather: Weather = try! self.result.get()
-  //      self.cities.append(weather.city)
-  //
-  //      self.tableView.reloadData()
-  //    }
-  //  }
-  
+  private func keepResult(_ result: Result<Weather>) {
+    guard let forecast = result.toOptional() else {
+      AlertPresenter.presentError(on: self, message: "Cannot retrieve actual forecast for this city")
+      return
+    }
+    
+    self.country = self.country.copy(weather: forecast)
+    self.statusView.setWeather(forecast)
+    self.tableView.reloadData()
+  }
   
   func showForecastOf(_ country: Country) {
-    
+    self.country = country
   }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
+  private func setTitles() {
+    self.cityLabel.text = self.country.capitalCity.name
+    self.countryLabel.text = self.country.name
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.country.weather.fold(0, { $0.nextDaysForecast.count })
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "forecast") as! ForecastCell
+    
+    return cell
+  }
 }

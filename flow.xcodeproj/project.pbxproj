@@ -29,8 +29,6 @@
 		8450AA7221B8D11400B44E39 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7121B8D11400B44E39 /* Collection.swift */; };
 		8450AA7421B8DC6500B44E39 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7321B8DC6500B44E39 /* AlertPresenter.swift */; };
 		8450AA7A21BA9A9B00B44E39 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7921BA9A9B00B44E39 /* CityCell.swift */; };
-		8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */; };
-		8450AA8021BA9B2D00B44E39 /* CityCellUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */; };
 		8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8221BAA55200B44E39 /* DetailsVC.swift */; };
 		8450AA8521BAA68F00B44E39 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8421BAA68F00B44E39 /* CountryService.swift */; };
 		8450AA8721BAACAD00B44E39 /* CountryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8621BAACAD00B44E39 /* CountryParser.swift */; };
@@ -38,6 +36,7 @@
 		8450AA8C21BAB4CF00B44E39 /* NewCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8B21BAB4CF00B44E39 /* NewCityCell.swift */; };
 		8450AA9021BAD06D00B44E39 /* StatusUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8E21BAD06D00B44E39 /* StatusUiView.swift */; };
 		8450AA9121BAD06D00B44E39 /* StatusUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA8F21BAD06D00B44E39 /* StatusUiView.xib */; };
+		8450AA9421BAFE7B00B44E39 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA9321BAFE7B00B44E39 /* ForecastCell.swift */; };
 		AC80672EE2C829715EE7D50B /* Pods_flowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76319CA47DB8212748EC770C /* Pods_flowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,8 +81,6 @@
 		8450AA7121B8D11400B44E39 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		8450AA7321B8DC6500B44E39 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		8450AA7921BA9A9B00B44E39 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
-		8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellUiView.swift; sourceTree = "<group>"; };
-		8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCellUiView.xib; sourceTree = "<group>"; };
 		8450AA8221BAA55200B44E39 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		8450AA8421BAA68F00B44E39 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		8450AA8621BAACAD00B44E39 /* CountryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryParser.swift; sourceTree = "<group>"; };
@@ -91,6 +88,7 @@
 		8450AA8B21BAB4CF00B44E39 /* NewCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCityCell.swift; sourceTree = "<group>"; };
 		8450AA8E21BAD06D00B44E39 /* StatusUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusUiView.swift; sourceTree = "<group>"; };
 		8450AA8F21BAD06D00B44E39 /* StatusUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusUiView.xib; sourceTree = "<group>"; };
+		8450AA9321BAFE7B00B44E39 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		B3B86B564B4757C1DFCB54E8 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +224,7 @@
 		8450AA7721BA909F00B44E39 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				8450AA9221BAFE5E00B44E39 /* ForecastCell */,
 				8450AA8D21BAD05500B44E39 /* StatusView */,
 				8450AA8221BAA55200B44E39 /* DetailsVC.swift */,
 			);
@@ -236,8 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				8450AA7921BA9A9B00B44E39 /* CityCell.swift */,
-				8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */,
-				8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */,
 			);
 			path = CityCell;
 			sourceTree = "<group>";
@@ -266,6 +263,14 @@
 				8450AA8F21BAD06D00B44E39 /* StatusUiView.xib */,
 			);
 			path = StatusView;
+			sourceTree = "<group>";
+		};
+		8450AA9221BAFE5E00B44E39 /* ForecastCell */ = {
+			isa = PBXGroup;
+			children = (
+				8450AA9321BAFE7B00B44E39 /* ForecastCell.swift */,
+			);
+			path = ForecastCell;
 			sourceTree = "<group>";
 		};
 		8F2023FDC1EDA7E9054E057F /* Frameworks */ = {
@@ -376,7 +381,6 @@
 				8450AA2F21B89F7F00B44E39 /* Main.storyboard in Resources */,
 				8450AA5821B8AC2400B44E39 /* Assets.xcassets in Resources */,
 				8450AA9121BAD06D00B44E39 /* StatusUiView.xib in Resources */,
-				8450AA8021BA9B2D00B44E39 /* CityCellUiView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +491,7 @@
 				8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */,
 				8450AA6B21B8C46800B44E39 /* Weather.swift in Sources */,
 				8450AA7421B8DC6500B44E39 /* AlertPresenter.swift in Sources */,
-				8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */,
+				8450AA9421BAFE7B00B44E39 /* ForecastCell.swift in Sources */,
 				8450AA6521B8B8C400B44E39 /* City.swift in Sources */,
 				8450AA5C21B8B4CE00B44E39 /* XibView.swift in Sources */,
 				8450AA7A21BA9A9B00B44E39 /* CityCell.swift in Sources */,

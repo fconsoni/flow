@@ -18,7 +18,7 @@ class WeatherParser {
     }
     
     let city = getCityFrom(json)
-    let forecasts = ({ $0.filter(isDailyForecast).take(4) } << ({ $0.map(getForecastFrom) } << (toList << getKeyFromJson("list"))))(json)
+    let forecasts = ({ $0.map(getForecastFrom) } << (toList << getKeyFromJson("list")))(json)
     
     if forecasts.isEmpty {
       return Result(NamedError.say("Empty JSON"))
@@ -36,10 +36,21 @@ class WeatherParser {
   }
   
   private static func getForecastFrom(_ json: JSON) -> Weather.Forecast {
-    return Weather.Forecast.init(minTemp: (toInt << (getKeyFromJson("temp_min") << getKeyFromJson("main")))(json),
-                                 maxTemp: (toInt << (getKeyFromJson("temp_max") << getKeyFromJson("main")))(json),
+    return Weather.Forecast.init(temp: (toInt << (getKeyFromJson("temp") << getKeyFromJson("main")))(json),
                                  cloudPercent: (toInt << (getKeyFromJson("all") << getKeyFromJson("clouds")))(json),
-                                 date: (toDate << getKeyFromJson("dt_txt"))(json))
+                                 date: (toDate << getKeyFromJson("dt_txt"))(json),
+                                 icon: (toIcon << (getKeyFromJson("main") << ({ $0.first.getOrElse("") } << (toList << getKeyFromJson("weather"))))) (json))
+  }
+  
+  private static func toIcon(_ json: JSON?) -> Icon {
+    let status = toString(json)
+    
+    switch status {
+    case "Clear": return .clear
+    case "Clouds": return .clouds
+    case "Rain": return .rain
+    default: return .scattered
+    }
   }
   
   private static func isDailyForecast(_ forecast: Weather.Forecast) -> Bool {

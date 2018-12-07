@@ -27,13 +27,12 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     tableView.dataSource = self
     
     self.addButton.setTitleColor(.gray, for: .disabled)
-    
-    //self.navigationController?.setViewControllers([self], animated: true)
   }
   
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     self.selectedCountry = self.countries[indexPath.row]
+    self.performSegue(withIdentifier: "ShowDetails", sender: self)
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,13 +55,15 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   private func setArgentina() {
     let arg = Country.init(name: "Argentina",
                            code: "AR",
-                           capitalCity: City(name: "Buenos Aires"))
+                           capitalCity: City(name: "Buenos Aires"),
+                           weather: nil)
     self.countries.append(arg)
     self.selectedCountry = arg
   }
   
   func recieveNewCountry(_ country: Country) {
     self.countries.append(country)
+    self.selectedCountry = country
     self.tableView.reloadData()
     
     if self.countries.count > 5 {
