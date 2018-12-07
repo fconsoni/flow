@@ -9,6 +9,9 @@
 import UIKit
 
 class DetailsVC: UIViewController {
+  @IBOutlet private weak var cityLabel: UILabel!
+  @IBOutlet private weak var countryLabel: UILabel!
+  @IBOutlet private weak var hourLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
