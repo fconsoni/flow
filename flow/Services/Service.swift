@@ -72,47 +72,4 @@ class Service {
     log.print("response: \(data.result.value.isEmpty() ? "EMPTY" : json)")
     log.close()
   }
-  
-//  func asd() {
-//    let log = Report()
-//
-//    let baseUrl = self.serverURL + "/"
-//    let url = baseUrl + endpoint.specificUrl
-//    var headerParams = HTTPHeaders()
-//
-//    if let endpointHeaderParams = endpoint.headerParams {
-//      for key in endpointHeaderParams.keys {
-//        headerParams[key] = endpointHeaderParams[key]
-//      }
-//    }
-//
-//    log.print("url: \(url) \(endpoint.httpVerb)")
-//
-//    print("RestServer | hitting: \(endpoint.httpVerb) \(url)")
-//    let data = Alamofire.request(url,
-//                                 method: endpoint.httpVerb,
-//                                 parameters: endpoint.queryParams,
-//                                 encoding: JSONEncoding.default,
-//                                 headers: headerParams).responseJSON()
-//
-//
-//    let body = data.request
-//      .flatMap { $0.httpBody }
-//      .flatMap { String(data: $0, encoding: String.Encoding.utf8) }
-//      .getOrElse("")
-//    log.print("body: \(body)")
-//
-//    guard let response = data.response else {
-//      log.print("no response")
-//      log.close()
-//      return .failure(data.result.error!)
-//    }
-//
-//    let statusCode = response.statusCode
-//    log.print("status code: \(statusCode)")
-//
-//    let json = JSON(data.result.value.getOrElse(""))
-//    log.print("response: \(data.result.value.isEmpty() ? "EMPTY" : json)")
-//    log.close()
-  
 }

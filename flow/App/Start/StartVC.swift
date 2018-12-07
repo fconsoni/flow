@@ -9,17 +9,20 @@
 import UIKit
 import SVProgressHUD
 
-class StartVC: UIViewController {
-  @IBOutlet private weak var startView: StartView!
-  
+class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  @IBOutlet private weak var tableView: UITableView!
   private var result: Result<Weather>!
+  private var cities: [City] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      if self.view != nil {}
-      
-      self.prepareData()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    if self.view != nil {}
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    
+    self.prepareData()
+  }
   
   private func prepareData() {
     onMainDo(SVProgressHUD.show, onBackgroundDo: { () -> Void in
@@ -34,13 +37,28 @@ class StartVC: UIViewController {
       AlertPresenter.presentError(on: self, message: "Something went wrong when retriving weather")
     } else {
       let weather: Weather = try! self.result.get()
-      self.startView.setWith(weather)
+      self.cities.append(weather.city)
+      
+      self.tableView.reloadData()
     }
   }
   
   private func keepResult(_ result: Result<Weather>) {
     self.result = result
     self.setDataInView()
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return cities.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell: CityCell = self.tableView.dequeueReusableCell(withIdentifier: "CityCell") as! CityCell
+    
+    let name = self.cities.map{ $0.name }[indexPath.row]
+    cell.setName(name)
+    
+    return cell
   }
 
   

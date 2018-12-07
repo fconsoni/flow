@@ -26,6 +26,8 @@ class WeatherService {
     Service(serverURL: completeUrl).hitUrlAndHandleWith(self.handler)
   }
   
+  
+  
   private func getApiKeyParam() -> String {
     return "&APPID=" + apiKey
   }

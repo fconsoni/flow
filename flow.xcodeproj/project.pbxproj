@@ -14,13 +14,11 @@
 		8450AA3421B89F8300B44E39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA3221B89F8300B44E39 /* LaunchScreen.storyboard */; };
 		8450AA3F21B89F8300B44E39 /* flowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA3E21B89F8300B44E39 /* flowTests.swift */; };
 		8450AA4A21B8A49800B44E39 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA4921B8A49800B44E39 /* StartVC.swift */; };
-		8450AA4E21B8A6C500B44E39 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA4D21B8A6C500B44E39 /* RestService.swift */; };
+		8450AA4E21B8A6C500B44E39 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA4D21B8A6C500B44E39 /* Service.swift */; };
 		8450AA5121B8A95800B44E39 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA5021B8A95800B44E39 /* WeatherService.swift */; };
 		8450AA5821B8AC2400B44E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA5721B8AC2400B44E39 /* Assets.xcassets */; };
 		8450AA5A21B8AD9300B44E39 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA5921B8AD9300B44E39 /* Tap.swift */; };
 		8450AA5C21B8B4CE00B44E39 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA5B21B8B4CE00B44E39 /* XibView.swift */; };
-		8450AA5F21B8B50000B44E39 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA5D21B8B50000B44E39 /* StartView.swift */; };
-		8450AA6021B8B50000B44E39 /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA5E21B8B50000B44E39 /* StartView.xib */; };
 		8450AA6321B8B73000B44E39 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA6221B8B73000B44E39 /* Async.swift */; };
 		8450AA6521B8B8C400B44E39 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA6421B8B8C400B44E39 /* City.swift */; };
 		8450AA6721B8B99D00B44E39 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA6621B8B99D00B44E39 /* Optional.swift */; };
@@ -30,6 +28,9 @@
 		8450AA7021B8CC8900B44E39 /* FPUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA6F21B8CC8900B44E39 /* FPUtils.swift */; };
 		8450AA7221B8D11400B44E39 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7121B8D11400B44E39 /* Collection.swift */; };
 		8450AA7421B8DC6500B44E39 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7321B8DC6500B44E39 /* AlertPresenter.swift */; };
+		8450AA7A21BA9A9B00B44E39 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7921BA9A9B00B44E39 /* CityCell.swift */; };
+		8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */; };
+		8450AA8021BA9B2D00B44E39 /* CityCellUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */; };
 		AC80672EE2C829715EE7D50B /* Pods_flowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76319CA47DB8212748EC770C /* Pods_flowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,13 +60,11 @@
 		8450AA3E21B89F8300B44E39 /* flowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flowTests.swift; sourceTree = "<group>"; };
 		8450AA4021B89F8300B44E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8450AA4921B8A49800B44E39 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
-		8450AA4D21B8A6C500B44E39 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		8450AA4D21B8A6C500B44E39 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8450AA5021B8A95800B44E39 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8450AA5721B8AC2400B44E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8450AA5921B8AD9300B44E39 /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
 		8450AA5B21B8B4CE00B44E39 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
-		8450AA5D21B8B50000B44E39 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		8450AA5E21B8B50000B44E39 /* StartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartView.xib; sourceTree = "<group>"; };
 		8450AA6221B8B73000B44E39 /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		8450AA6421B8B8C400B44E39 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		8450AA6621B8B99D00B44E39 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
@@ -75,6 +74,9 @@
 		8450AA6F21B8CC8900B44E39 /* FPUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPUtils.swift; sourceTree = "<group>"; };
 		8450AA7121B8D11400B44E39 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		8450AA7321B8DC6500B44E39 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		8450AA7921BA9A9B00B44E39 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellUiView.swift; sourceTree = "<group>"; };
+		8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCellUiView.xib; sourceTree = "<group>"; };
 		B3B86B564B4757C1DFCB54E8 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				8450AA6C21B8C84700B44E39 /* Parser */,
-				8450AA4D21B8A6C500B44E39 /* RestService.swift */,
+				8450AA4D21B8A6C500B44E39 /* Service.swift */,
 				8450AA5021B8A95800B44E39 /* WeatherService.swift */,
 			);
 			path = Services;
@@ -181,9 +183,8 @@
 		8450AA5221B8AAE700B44E39 /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				8450AA7821BA9A5F00B44E39 /* CityCell */,
 				8450AA4921B8A49800B44E39 /* StartVC.swift */,
-				8450AA5D21B8B50000B44E39 /* StartView.swift */,
-				8450AA5E21B8B50000B44E39 /* StartView.xib */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -210,6 +211,16 @@
 			children = (
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		8450AA7821BA9A5F00B44E39 /* CityCell */ = {
+			isa = PBXGroup;
+			children = (
+				8450AA7921BA9A9B00B44E39 /* CityCell.swift */,
+				8450AA7D21BA9B2D00B44E39 /* CityCellUiView.swift */,
+				8450AA7E21BA9B2D00B44E39 /* CityCellUiView.xib */,
+			);
+			path = CityCell;
 			sourceTree = "<group>";
 		};
 		8F2023FDC1EDA7E9054E057F /* Frameworks */ = {
@@ -318,8 +329,8 @@
 			files = (
 				8450AA3421B89F8300B44E39 /* LaunchScreen.storyboard in Resources */,
 				8450AA2F21B89F7F00B44E39 /* Main.storyboard in Resources */,
-				8450AA6021B8B50000B44E39 /* StartView.xib in Resources */,
 				8450AA5821B8AC2400B44E39 /* Assets.xcassets in Resources */,
+				8450AA8021BA9B2D00B44E39 /* CityCellUiView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,13 +434,14 @@
 				8450AA6321B8B73000B44E39 /* Async.swift in Sources */,
 				8450AA7221B8D11400B44E39 /* Collection.swift in Sources */,
 				8450AA6921B8BC8F00B44E39 /* Result.swift in Sources */,
-				8450AA4E21B8A6C500B44E39 /* RestService.swift in Sources */,
+				8450AA4E21B8A6C500B44E39 /* Service.swift in Sources */,
 				8450AA6B21B8C46800B44E39 /* Weather.swift in Sources */,
 				8450AA7421B8DC6500B44E39 /* AlertPresenter.swift in Sources */,
+				8450AA7F21BA9B2D00B44E39 /* CityCellUiView.swift in Sources */,
 				8450AA6521B8B8C400B44E39 /* City.swift in Sources */,
 				8450AA5C21B8B4CE00B44E39 /* XibView.swift in Sources */,
+				8450AA7A21BA9A9B00B44E39 /* CityCell.swift in Sources */,
 				8450AA6E21B8C86100B44E39 /* WeatherParser.swift in Sources */,
-				8450AA5F21B8B50000B44E39 /* StartView.swift in Sources */,
 				8450AA5A21B8AD9300B44E39 /* Tap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
