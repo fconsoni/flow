@@ -27,9 +27,9 @@ func toList(_ json: JSON?) -> [JSON] {
 
 func toDate(_ json: JSON?) -> Date {
   let formatter = DateFormatter()
-  formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+  formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
   
-  return ((formatter.date(from:) << toString)(json)).getOrElse(Date())
+  return ((formatter.date(from:) << ({ $0.words().joined(separator: "T") + "+0000" } << toString))(json)).getOrElse(Date())
 }
 
 let getKeyFromJson = curry(flip(getFrom))

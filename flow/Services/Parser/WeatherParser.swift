@@ -18,7 +18,7 @@ class WeatherParser {
     }
     
     let city = getCityFrom(json)
-    let forecasts = ({ $0.map(getForecastFrom) } << (toList << getKeyFromJson("list")))(json)
+    let forecasts = ({ $0.map(getForecastFrom).sorted(by: { f1,f2 in orderAscDates(f1.date, f2.date) }) } << (toList << getKeyFromJson("list")))(json)
     
     if forecasts.isEmpty {
       return Result(NamedError.say("Empty JSON"))
@@ -53,11 +53,7 @@ class WeatherParser {
     }
   }
   
-  private static func isDailyForecast(_ forecast: Weather.Forecast) -> Bool {
-    let date = forecast.date
-    let calendar = Calendar.current
-    let hour = calendar.component(.hour, from: date)
-    
-    return hour == 6
+  private static func orderAscDates(_ date1: Date, _ date2: Date) -> Bool {
+    return Calendar.current.compare(date1, to: date2, toGranularity: .hour).rawValue < 0
   }
 }

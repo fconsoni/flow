@@ -273,7 +273,22 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwu-Fh-Q2o" id="j0q-5h-nq0">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykT-eN-3CW" customClass="ForecastUiView" customModule="flow" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="ykT-eN-3CW" firstAttribute="width" secondItem="wwu-Fh-Q2o" secondAttribute="width" id="ANj-me-caF"/>
+                                            <constraint firstItem="ykT-eN-3CW" firstAttribute="height" secondItem="wwu-Fh-Q2o" secondAttribute="height" id="MBU-L5-GMi"/>
+                                            <constraint firstItem="ykT-eN-3CW" firstAttribute="centerX" secondItem="wwu-Fh-Q2o" secondAttribute="centerX" id="UkK-cf-Ffj"/>
+                                            <constraint firstItem="ykT-eN-3CW" firstAttribute="centerY" secondItem="wwu-Fh-Q2o" secondAttribute="centerY" id="XqU-CR-YKw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="forecastView" destination="ykT-eN-3CW" id="asx-2g-Wqy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

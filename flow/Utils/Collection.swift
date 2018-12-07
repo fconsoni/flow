@@ -67,3 +67,11 @@ extension String {
     return String(self.dropLast(number))
   }
 }
+
+func getDayHourFrom(_ date: Date) -> Int {
+  let formatter = DateFormatter()
+  formatter.dateFormat = "HH"
+  
+  let timeString = formatter.string(from: date)
+  return Calendar.current.component(.hour, from: date)
+}

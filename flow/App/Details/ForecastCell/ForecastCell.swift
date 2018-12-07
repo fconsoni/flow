@@ -9,6 +9,7 @@
 import UIKit
 
 class ForecastCell: UITableViewCell {
+  @IBOutlet private weak var forecastView: ForecastUiView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +21,9 @@ class ForecastCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
+  func setWith(_ forecast: Weather.Forecast) {
+    self.forecastView.setWith(forecast)
+  }
 
 }

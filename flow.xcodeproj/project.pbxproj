@@ -37,6 +37,8 @@
 		8450AA9021BAD06D00B44E39 /* StatusUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA8E21BAD06D00B44E39 /* StatusUiView.swift */; };
 		8450AA9121BAD06D00B44E39 /* StatusUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA8F21BAD06D00B44E39 /* StatusUiView.xib */; };
 		8450AA9421BAFE7B00B44E39 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA9321BAFE7B00B44E39 /* ForecastCell.swift */; };
+		8450AA9721BB00BA00B44E39 /* ForecastUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450AA9521BB00BA00B44E39 /* ForecastUiView.swift */; };
+		8450AA9821BB00BA00B44E39 /* ForecastUiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450AA9621BB00BA00B44E39 /* ForecastUiView.xib */; };
 		AC80672EE2C829715EE7D50B /* Pods_flowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76319CA47DB8212748EC770C /* Pods_flowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,8 @@
 		8450AA8E21BAD06D00B44E39 /* StatusUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusUiView.swift; sourceTree = "<group>"; };
 		8450AA8F21BAD06D00B44E39 /* StatusUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusUiView.xib; sourceTree = "<group>"; };
 		8450AA9321BAFE7B00B44E39 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		8450AA9521BB00BA00B44E39 /* ForecastUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastUiView.swift; sourceTree = "<group>"; };
+		8450AA9621BB00BA00B44E39 /* ForecastUiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastUiView.xib; sourceTree = "<group>"; };
 		B3B86B564B4757C1DFCB54E8 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				8450AA9321BAFE7B00B44E39 /* ForecastCell.swift */,
+				8450AA9521BB00BA00B44E39 /* ForecastUiView.swift */,
+				8450AA9621BB00BA00B44E39 /* ForecastUiView.xib */,
 			);
 			path = ForecastCell;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			files = (
 				8450AA3421B89F8300B44E39 /* LaunchScreen.storyboard in Resources */,
 				8450AA2F21B89F7F00B44E39 /* Main.storyboard in Resources */,
+				8450AA9821BB00BA00B44E39 /* ForecastUiView.xib in Resources */,
 				8450AA5821B8AC2400B44E39 /* Assets.xcassets in Resources */,
 				8450AA9121BAD06D00B44E39 /* StatusUiView.xib in Resources */,
 			);
@@ -486,6 +493,7 @@
 				8450AA6321B8B73000B44E39 /* Async.swift in Sources */,
 				8450AA7221B8D11400B44E39 /* Collection.swift in Sources */,
 				8450AA6921B8BC8F00B44E39 /* Result.swift in Sources */,
+				8450AA9721BB00BA00B44E39 /* ForecastUiView.swift in Sources */,
 				8450AA4E21B8A6C500B44E39 /* Service.swift in Sources */,
 				8450AA8521BAA68F00B44E39 /* CountryService.swift in Sources */,
 				8450AA8321BAA55200B44E39 /* DetailsVC.swift in Sources */,
