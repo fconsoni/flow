@@ -13,7 +13,37 @@ class DetailsVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
+  
+  
+  //  private func prepareData() {
+  //    onMainDo(SVProgressHUD.show, onBackgroundDo: { () -> Void in
+  //      WeatherService(onDataRecieved: self.keepResult).getForecastFor(cityName: "buenos+aires", countryCode: "ar")
+  //    }, thenOnMainDo: {
+  //      SVProgressHUD.dismiss()
+  //      self.enableButton(true)
+  //    })
+  //  }
+  //
+  //  private func keepResult(_ result: Result<Weather>) {
+  //    self.result = result
+  //    self.setDataInView()
+  //  }
+  //
+  //  private func setDataInView() {
+  //    if !self.result.isSuccess() {
+  //      AlertPresenter.presentError(on: self, message: "Something went wrong when retriving weather")
+  //    } else {
+  //      let weather: Weather = try! self.result.get()
+  //      self.cities.append(weather.city)
+  //
+  //      self.tableView.reloadData()
+  //    }
+  //  }
+  
+  
+  func showForecastOf(_ country: Country) {
     
+  }
 
     /*
     // MARK: - Navigation

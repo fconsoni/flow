@@ -17,9 +17,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for countries" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Dx-JT-qiB">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-pj-Jc7">
+                                <rect key="frame" x="149.5" y="158" width="76" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchForCountriesWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="icM-aP-tFb"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O7K-zW-J2D">
+                                <rect key="frame" x="16" y="262" width="343" height="373"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewCityCell" id="lGJ-fj-kaw" customClass="NewCityCell" customModule="flow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lGJ-fj-kaw" id="I7T-Zm-MXD">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWw-Ad-uq1">
+                                                    <rect key="frame" x="16" y="24" width="53.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="zWw-Ad-uq1" firstAttribute="leading" secondItem="lGJ-fj-kaw" secondAttribute="leading" constant="16" id="xGL-2b-MMr"/>
+                                            <constraint firstItem="zWw-Ad-uq1" firstAttribute="centerY" secondItem="lGJ-fj-kaw" secondAttribute="centerY" id="xg6-D6-X0N"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="countryLabel" destination="zWw-Ad-uq1" id="kVc-Ag-H18"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Dx-JT-qiB" secondAttribute="trailing" constant="16" id="0Pc-Rc-cgK"/>
+                            <constraint firstItem="2Dx-JT-qiB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="48J-XZ-qdh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O7K-zW-J2D" secondAttribute="bottom" constant="32" id="7W7-RR-Ydf"/>
+                            <constraint firstItem="O7K-zW-J2D" firstAttribute="top" secondItem="NCk-pj-Jc7" secondAttribute="bottom" constant="64" id="R6W-fN-yg6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O7K-zW-J2D" secondAttribute="trailing" constant="16" id="Rbk-RR-9mr"/>
+                            <constraint firstItem="NCk-pj-Jc7" firstAttribute="top" secondItem="2Dx-JT-qiB" secondAttribute="bottom" constant="32" id="ZSS-Bf-dF4"/>
+                            <constraint firstItem="2Dx-JT-qiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dOv-KB-4a4"/>
+                            <constraint firstItem="NCk-pj-Jc7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dTV-Sb-lsQ"/>
+                            <constraint firstItem="2Dx-JT-qiB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h4M-XJ-HsL"/>
+                            <constraint firstItem="O7K-zW-J2D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="t1p-NG-SJP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="okButton" destination="NCk-pj-Jc7" id="7H2-T6-vt7"/>
+                        <outlet property="searchTextField" destination="2Dx-JT-qiB" id="bGa-j2-ChU"/>
+                        <outlet property="tableView" destination="O7K-zW-J2D" id="3dh-fe-Vs1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +162,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="NvH-yj-qyP" id="YpY-RU-BPp"/>
-                                            <segue destination="wwf-sk-tWx" kind="show" id="q8X-f4-OAR"/>
+                                            <segue destination="wwf-sk-tWx" kind="show" identifier="ShowDetails" id="q8X-f4-OAR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="178" y="849"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailsVC-->
         <scene sceneID="gKT-SK-qqV">
             <objects>
-                <viewController id="wwf-sk-tWx" sceneMemberID="viewController">
+                <viewController id="wwf-sk-tWx" customClass="DetailsVC" customModule="flow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2s2-nj-MdZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -14,50 +14,36 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @IBOutlet private weak var addButton: UIButton!
   
   private var result: Result<Weather>!
-  private var cities: [City] = []
+  private var countries: [Country] = []
+  private var selectedCountry: Country!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     if self.view != nil {}
     
+    self.setArgentina()
+    
     tableView.delegate = self
     tableView.dataSource = self
     
-    self.prepareData()
+    self.addButton.setTitleColor(.gray, for: .disabled)
+    
+    self.navigationController?.setViewControllers([self], animated: true)
   }
   
-  private func prepareData() {
-    onMainDo(SVProgressHUD.show, onBackgroundDo: { () -> Void in
-      WeatherService(onDataRecieved: self.keepResult).getForecastFor(cityName: "buenos+aires", countryCode: "ar")
-    }, thenOnMainDo: {
-      SVProgressHUD.dismiss()
-    })
-  }
   
-  private func keepResult(_ result: Result<Weather>) {
-    self.result = result
-    self.setDataInView()
-  }
-  
-  private func setDataInView() {
-    if !self.result.isSuccess() {
-      AlertPresenter.presentError(on: self, message: "Something went wrong when retriving weather")
-    } else {
-      let weather: Weather = try! self.result.get()
-      self.cities.append(weather.city)
-      
-      self.tableView.reloadData()
-    }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.selectedCountry = self.countries[indexPath.row]
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return cities.count
+    return countries.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: CityCell = self.tableView.dequeueReusableCell(withIdentifier: "CityCell") as! CityCell
     
-    let name = self.cities.map{ $0.name }[indexPath.row]
+    let name = self.countries.map{ $0.capitalCity.name }[indexPath.row]
     cell.setName(name)
     
     return cell
@@ -67,14 +53,24 @@ class StartVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     performSegue(withIdentifier: "AddCity", sender: sender)
   }
   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  private func setArgentina() {
+    let arg = Country.init(name: "Argentina",
+                           code: "AR",
+                           capitalCity: City(name: "Buenos Aires"))
+    self.countries.append(arg)
+    self.selectedCountry = arg
+  }
+  
+  func recieveNewCountry(_ country: Country) {
+    self.countries.append(country)
+    self.tableView.reloadData()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.destination is DetailsVC {
+      let dest = segue.destination as! DetailsVC
+      dest.showForecastOf(self.selectedCountry)
     }
-    */
+  }
 
 }

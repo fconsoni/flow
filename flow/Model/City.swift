@@ -16,4 +16,6 @@ struct Country {
   let name: String
   let code: String
   let capitalCity: City
+  
+  let weather: Weather? = nil
 }
